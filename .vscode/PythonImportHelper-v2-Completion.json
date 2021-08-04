@@ -1,0 +1,45 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def index():\n    return render_template(\"index.html\")\nif __name__ == \"__main__\":\n    app.run(\n        host=os.environ.get(\"IP\", \"0.0.0.0\"),\n        port=int(os.environ.get(\"PORT\", \"5000\")),\n        debug=True)",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\nif __name__ == \"__main__\":\n    app.run(\n        host=os.environ.get(\"IP\", \"0.0.0.0\"),\n        port=int(os.environ.get(\"PORT\", \"5000\")),\n        debug=True)",
+        "detail": "run",
+        "documentation": {}
+    }
+]
