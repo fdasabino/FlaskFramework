@@ -9,6 +9,15 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -29,7 +38,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def index():\n    return render_template(\"index.html\")\n@app.route(\"/about\")\ndef about():\n    return render_template(\"about.html\")\n@app.route(\"/contact\")\ndef contact():\n    return render_template(\"contact.html\")\n@app.route(\"/careers\")\ndef careers():",
+        "peekOfCode": "def index():\n    return render_template(\"index.html\")\n@app.route(\"/about\")\ndef about():\n    data = []\n    with open(\"data/company.json\", \"r\") as json_data:\n        data = json.load(json_data)\n    return render_template(\"about.html\", page_title=\"About\", company=data)\n@app.route(\"/contact\")\ndef contact():",
         "detail": "run",
         "documentation": {}
     },
@@ -38,7 +47,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def about():\n    return render_template(\"about.html\")\n@app.route(\"/contact\")\ndef contact():\n    return render_template(\"contact.html\")\n@app.route(\"/careers\")\ndef careers():\n    return render_template(\"careers.html\")\nif __name__ == \"__main__\":\n    app.run(",
+        "peekOfCode": "def about():\n    data = []\n    with open(\"data/company.json\", \"r\") as json_data:\n        data = json.load(json_data)\n    return render_template(\"about.html\", page_title=\"About\", company=data)\n@app.route(\"/contact\")\ndef contact():\n    return render_template(\"contact.html\", page_title=\"Contact\")\n@app.route(\"/careers\")\ndef careers():",
         "detail": "run",
         "documentation": {}
     },
@@ -47,7 +56,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def contact():\n    return render_template(\"contact.html\")\n@app.route(\"/careers\")\ndef careers():\n    return render_template(\"careers.html\")\nif __name__ == \"__main__\":\n    app.run(\n        host=os.environ.get(\"IP\", \"0.0.0.0\"),\n        port=int(os.environ.get(\"PORT\", \"5000\")),\n        debug=True)",
+        "peekOfCode": "def contact():\n    return render_template(\"contact.html\", page_title=\"Contact\")\n@app.route(\"/careers\")\ndef careers():\n    return render_template(\"careers.html\", page_title=\"Careers\")\nif __name__ == \"__main__\":\n    app.run(\n        host=os.environ.get(\"IP\", \"0.0.0.0\"),\n        port=int(os.environ.get(\"PORT\", \"5000\")),\n        debug=True)",
         "detail": "run",
         "documentation": {}
     },
@@ -56,7 +65,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def careers():\n    return render_template(\"careers.html\")\nif __name__ == \"__main__\":\n    app.run(\n        host=os.environ.get(\"IP\", \"0.0.0.0\"),\n        port=int(os.environ.get(\"PORT\", \"5000\")),\n        debug=True)",
+        "peekOfCode": "def careers():\n    return render_template(\"careers.html\", page_title=\"Careers\")\nif __name__ == \"__main__\":\n    app.run(\n        host=os.environ.get(\"IP\", \"0.0.0.0\"),\n        port=int(os.environ.get(\"PORT\", \"5000\")),\n        debug=True)",
         "detail": "run",
         "documentation": {}
     },
@@ -65,7 +74,7 @@
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\n@app.route(\"/about\")\ndef about():\n    return render_template(\"about.html\")\n@app.route(\"/contact\")\ndef contact():\n    return render_template(\"contact.html\")",
+        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\n@app.route(\"/about\")\ndef about():\n    data = []\n    with open(\"data/company.json\", \"r\") as json_data:\n        data = json.load(json_data)\n    return render_template(\"about.html\", page_title=\"About\", company=data)",
         "detail": "run",
         "documentation": {}
     }
